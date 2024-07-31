@@ -1,3 +1,4 @@
+import EventCard from "@/components/EventListPage/EventCard";
 import { getEvents } from "@/lib/getEvents";
 import React from "react";
 
@@ -5,12 +6,9 @@ const page = async () => {
   const { events } = await getEvents();
   console.log(events);
   return (
-    <div>
+    <div className="container mx-auto grid grid-cols-4 gap-8 mt-6">
       {events.map((event) => (
-        <div key={event._d}>
-            <img src={event?.image1} alt="" />
-            <p>{event.name}</p>
-        </div>
+        <EventCard key={event._d} event={event}></EventCard>
       ))}
     </div>
   );

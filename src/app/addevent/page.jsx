@@ -21,7 +21,7 @@ const page = () => {
           name,
           locations,
           price,
-          ratings,
+          ratings:[ratings],
           image1,
           image2,
           category,

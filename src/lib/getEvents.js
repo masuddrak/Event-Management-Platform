@@ -11,3 +11,15 @@ export const getEvents = async () => {
     return [];
   }
 };
+
+export const getSingleEVent = async (id) => {
+  try {
+  
+    const res = await axios.get(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/eventlist/api/${id}`
+    );
+    return res.data;
+  } catch (error) {
+    return {};
+  }
+};
