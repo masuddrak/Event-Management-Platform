@@ -3,10 +3,10 @@ import { connectDB } from "@/lib/connectDB";
 import { NextResponse } from "next/server";
 export const GET = async (req,{params}) => {
   const db = await connectDB();
-  const commentCollection = db.collection("comments");
+  const replayComentCollection = db.collection("repalycomment");
   try {
 
-    const comments = await commentCollection.find({reviewEventID:params.id}).toArray();
+    const comments = await replayComentCollection.find({replayId:params.id}).toArray();
     return NextResponse.json({ comments });
   } catch (error) {
     console.log(error);

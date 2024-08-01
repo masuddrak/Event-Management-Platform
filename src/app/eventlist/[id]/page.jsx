@@ -10,8 +10,8 @@ const page = async ({ params }) => {
   const { image1, name, _id, price, ratings, locations } = event || {};
   const { comments } = await getCommentEVent(_id);
   const averageRating =
-    ratings?.reduce((partialSum, a) => partialSum + a, 0) / ratings?.length;
-  console.log(comments);
+  Math.floor(comments?.reduce((partialSum, a) => partialSum + parseInt(a.rating), 0) / comments?.length);
+  const averageRatingArray=[...Array(averageRating).keys()]
   return (
     <div className=" container mx-auto mt-6">
       <div>
@@ -32,10 +32,10 @@ const page = async ({ params }) => {
             </div>
             <div>
               <p>Tikct :${price}</p>
-              <p>Rating:{averageRating}</p>
-              <p className="flex items-center">
-                {ratings}
-                {[...Array(parseInt(ratings))].map((rat, index) => (
+              
+              <p className="flex items-center"> Avg Rating:
+                {averageRating}
+                {[...Array(parseInt(averageRating))].map((rat, index) => (
                   <IoIosStar key={index} className="text-primary"></IoIosStar>
                 ))}
               </p>
