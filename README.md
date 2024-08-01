@@ -1,3 +1,13 @@
+
+## create root .env file
+
+NEXT_PUBLIC_MONGODB_URI=exp: dtdrtruyuyi
+NEXT_PUBLIC_AUTH_SECRET= exp: fhgjuyttttttttttttuk
+NEXT_PUBLIC_BASE_URL=exp: http://localhost:3000
+
+ ## project
+ npm run dev
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
