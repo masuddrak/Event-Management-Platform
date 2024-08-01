@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { Suspense } from "react";
+import React from "react";
 
 
 const SignUpPage = () => {
@@ -12,7 +12,7 @@ const SignUpPage = () => {
       email: event.target.email.value,
       password: event.target.password.value,
     };
-    const resp = await fetch("http://localhost:3000/signup/api", {
+    const resp = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/signup/api`, {
       method: "POST",
       body: JSON.stringify(newUser),
       headers: {
