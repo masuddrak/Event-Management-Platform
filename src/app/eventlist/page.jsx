@@ -4,7 +4,7 @@ import React from "react";
 
 const page = async () => {
   const { events } = await getEvents();
-  console.log(events);
+  
   return (
     <div className="container mx-auto grid grid-cols-4 gap-8 mt-6">
       {events.map((event) => (
