@@ -1,14 +1,13 @@
 "use client";
-import Image from "next/image";
+
 import Link from "next/link";
 import React  from "react";
-import { signIn, useSession } from "next-auth/react";
+import { signIn } from "next-auth/react";
 
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 const Page = () => {
-  const router = useRouter();
-  const session = useSession();
+
   const searchParams = useSearchParams();
   const path = searchParams.get("redirect");
 

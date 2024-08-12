@@ -4,7 +4,7 @@ import React from "react";
 
 const EventCard = ({ event }) => {
   const { image1, name, _id, price, ratings, locations } = event;
-  console.log(ratings);
+
   const averageRating =
     ratings.reduce((partialSum, a) => partialSum + a, 0) / ratings.length;
   return (

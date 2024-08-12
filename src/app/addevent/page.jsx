@@ -31,13 +31,13 @@ const page = () => {
         try {
           // create user
           const res = await axios.post("/addevent/api", eventInfo);
-          console.log(res);
+        
           if (res.status === 200) {
             const form = e.target;
             form.reset();
           }
         } catch (error) {
-          console.log(error);
+          return(error);
         }
       };
     return (

@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import { BiSolidDislike } from "react-icons/bi";
 import { BiSolidLike } from "react-icons/bi";
 import { FaReply } from "react-icons/fa";
-import ReplayCommentCard from "./ReplayCommentCard";
+
 
 const CommentCard = ({ comment }) => {
   const [isActiveFrom, setIsActiveFrom] = useState(false);
@@ -17,12 +17,12 @@ const CommentCard = ({ comment }) => {
   // handel increment like
   const handelIncrementComment = async (id) => {
     await getIncrementLike(id);
-    console.log("hello", id);
+  
   };
   // dislike comment
   const handelDicrementComment = async (id) => {
     await getDicrementLike(id);
-    console.log("hello", id);
+    
   };
   // reaply comment
   const handelReplayComment = async (id) => {
@@ -37,13 +37,13 @@ const CommentCard = ({ comment }) => {
         "/eventlist/comment/replaycomment/api",
         commentInfo
       );
-      console.log(res);
+     
       if (res.status === 200) {
         const form = e.target;
         form.reset();
       }
     } catch (error) {
-      console.log(error);
+      return(error);
     }
   };
   return (

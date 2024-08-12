@@ -16,7 +16,7 @@ const EventComment = ({id}) => {
         const reviewEventID = id
         const rating = from.rating.value
         if (rating < 1 || rating > 5) {
-            return toast.warning("plase input rating 1 to 5")
+            return ("plase input rating 1 to 5")
         }
         const userName = user?.name
         const reviewEmail = user?.email
@@ -25,12 +25,12 @@ const EventComment = ({id}) => {
         const reviewInfo = { reviewEventID, rating, userName, reviewEmail, reviewDate, comment,like:0,disllike:0 }
         try {
             const { data } = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/eventlist/api/${id}`, reviewInfo)
-            console.log("rivi", data)
+           
           
         } catch (error) {
-           console.log(error)
+           return(error)
         }
-        console.table(reviewInfo)
+  
     }
     return (
         <div>

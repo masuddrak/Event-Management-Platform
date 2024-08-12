@@ -9,7 +9,7 @@ export const GET = async (req,{params}) => {
     const comments = await commentCollection.find({reviewEventID:params.id}).toArray();
     return NextResponse.json({ comments });
   } catch (error) {
-    console.log(error);
+  
     return NextResponse.json({ message: `{dsfdgfh error ${params.id}}`, error });
   }
 };

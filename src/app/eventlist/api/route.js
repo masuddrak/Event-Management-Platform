@@ -8,7 +8,7 @@ export const GET = async () => {
         const events = await alleventCollection.find().toArray();
         return NextResponse.json({events})
     } catch (error) {
-        console.log(error);
+        
         return NextResponse.json({message : "No Data Found", error})
     }
 };

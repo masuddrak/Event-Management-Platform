@@ -11,7 +11,7 @@ export const GET = async (req, { params }) => {
     });
     return NextResponse.json({ event });
   } catch (error) {
-    console.log(error);
+
     return NextResponse.json({ message: `{dsfdgfh ${params}}`, error });
   }
 };
@@ -23,7 +23,7 @@ export const POST = async (req) => {
     const comments = await commentsCollection.insertOne(commnet);
     return NextResponse.json({ comments });
   } catch (error) {
-    console.log(error);
+   
     return NextResponse.json({ message: `{dsfdgfh ${params}}`, error });
   }
 };

@@ -16,7 +16,7 @@ export const PATCH = async (req,{params}) => {
     const result = await commentCollection.updateOne(filter, udpadeDoc,options)
     return NextResponse.json({ result });
   } catch (error) {
-    console.log(error);
+ 
     return NextResponse.json({ message: `{dsfdgfh error ${params.id}}`, error });
   }
 };

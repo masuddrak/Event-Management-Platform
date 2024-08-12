@@ -14,6 +14,6 @@ export const connectDB = async () => {
     db = client.db('enventDB')
     return db;
   } catch (error) {
-    console.log({error});
+    return({error});
   }
 };

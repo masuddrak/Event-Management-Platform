@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
+
 import Link from "next/link";
 import { CiSearch } from "react-icons/ci";
-import { IoBagHandleOutline } from "react-icons/io5";
+
 import { signOut, useSession } from "next-auth/react";
 import { IoPersonCircle } from "react-icons/io5";
 
